@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://validator.dmbasis.ru/phone/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://validator.dmbasis.ru/phone/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://validator.dmbasis.ru/phone/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Validate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateResult" type="tns:ArrayOfValidationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidationResult" nillable="true" type="tns:ValidationResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidationResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecordId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RawPhoneCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RawPhoneNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Provider" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeZone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="batch" type="tns:ArrayOfValidationRequest" />
+            <s:element minOccurs="1" maxOccurs="1" name="withManualChecking" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidationRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidationRequest" nillable="true" type="tns:ValidationRequest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidationRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RecordId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNum" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateBatchResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobStatusResult" type="tns:JobStatusResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="JobStatusResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetValidationResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidationResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidationResultResult" type="tns:ArrayOfValidationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StartJobResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:Validate" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateBatch" />
+  </wsdl:message>
+  <wsdl:message name="ValidateBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetJobStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidationResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidationResult" />
+  </wsdl:message>
+  <wsdl:message name="GetValidationResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartJobSoapIn">
+    <wsdl:part name="parameters" element="tns:StartJob" />
+  </wsdl:message>
+  <wsdl:message name="StartJobSoapOut">
+    <wsdl:part name="parameters" element="tns:StartJobResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Validate">
+      <wsdl:input message="tns:ValidateSoapIn" />
+      <wsdl:output message="tns:ValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBatch">
+      <wsdl:input message="tns:ValidateBatchSoapIn" />
+      <wsdl:output message="tns:ValidateBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <wsdl:input message="tns:GetJobStatusSoapIn" />
+      <wsdl:output message="tns:GetJobStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidationResult">
+      <wsdl:input message="tns:GetValidationResultSoapIn" />
+      <wsdl:output message="tns:GetValidationResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartJob">
+      <wsdl:input message="tns:StartJobSoapIn" />
+      <wsdl:output message="tns:StartJobSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Validate">
+      <soap:operation soapAction="http://validator.dmbasis.ru/phone/Validate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBatch">
+      <soap:operation soapAction="http://validator.dmbasis.ru/phone/ValidateBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <soap:operation soapAction="http://validator.dmbasis.ru/phone/GetJobStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidationResult">
+      <soap:operation soapAction="http://validator.dmbasis.ru/phone/GetValidationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartJob">
+      <soap:operation soapAction="http://validator.dmbasis.ru/phone/StartJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Validate">
+      <soap12:operation soapAction="http://validator.dmbasis.ru/phone/Validate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBatch">
+      <soap12:operation soapAction="http://validator.dmbasis.ru/phone/ValidateBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <soap12:operation soapAction="http://validator.dmbasis.ru/phone/GetJobStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidationResult">
+      <soap12:operation soapAction="http://validator.dmbasis.ru/phone/GetValidationResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartJob">
+      <soap12:operation soapAction="http://validator.dmbasis.ru/phone/StartJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://validator.dmbasis.ru/phone/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://validator.dmbasis.ru/phone/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
