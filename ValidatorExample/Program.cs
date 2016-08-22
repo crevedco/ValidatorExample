@@ -13,23 +13,7 @@ namespace ValidatorExample
         static void Main(string[] args)
         {
             var client = new ServiceSoapClient();
-            string[] phonesForValidate = { "+7 495 667 88 99", "+7 916 213 26 32" };
-
-            for (int i = 0; i < phonesForValidate.Length; i++)
-            {
-                Console.WriteLine("Валидация одного номера:");
-                Console.WriteLine(String.Format("Телефон для валидации: {0}", phonesForValidate[i]));
-
-                var singleResult = client.Validate(string.Empty, phonesForValidate[i])[0];
-
-                Console.WriteLine(String.Format("Код страны: {0}", singleResult.CountryCode));
-                Console.WriteLine(String.Format("Телефонный код: {0}", singleResult.PhoneCode));
-                Console.WriteLine(String.Format("Телефонный номер: {0}", singleResult.PhoneNum));
-                Console.WriteLine(String.Format("Тип телефона: {0}", singleResult.PhoneType));
-                Console.WriteLine(String.Format("Оператор связи: {0}", singleResult.Provider));
-
-                Console.ReadLine();
-            }
+            string[] phonesForValidate = { "+7 495 667 88 99", "9162132632", "8(903)165-34-56", "фываолдж" };
 
             Console.WriteLine("Пакетная валидация");
 
@@ -61,6 +45,7 @@ namespace ValidatorExample
             {
                 Console.WriteLine();
                 Console.WriteLine(String.Format("Идентификатор записи: {0}", batchResult[i].RecordId));
+                Console.WriteLine(String.Format("Статус валидности: {0}", batchResult[i].Status));
                 Console.WriteLine(String.Format("Код страны: {0}", batchResult[i].CountryCode));
                 Console.WriteLine(String.Format("Телефонный код: {0}", batchResult[i].PhoneCode));
                 Console.WriteLine(String.Format("Телефонный номер: {0}", batchResult[i].PhoneNum));
