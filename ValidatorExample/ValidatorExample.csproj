@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\ValidationService\service.wsdl" />
+    <None Include="Service References\ValidationService\service1.wsdl" />
     <None Include="Service References\ValidationService\ValidatorExample.ValidationService.JobStatusResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -68,9 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ValidationService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ValidationService\service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ValidationService\configuration91.svcinfo" />
@@ -83,6 +80,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ValidationService\service1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://validator.dmbasis.ru/phone/service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://validator.dmbasis.ru/phoneExt/service.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="1a2cdbe5-b820-4325-a3bf-54d9b8526a46" SourceId="1" SourceUrl="http://validator.dmbasis.ru/phone/service.asmx?wsdl" />
-    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="6f929421-070c-4507-a495-0b154f62b546" SourceId="1" SourceUrl="http://validator.dmbasis.ru/phone/service.asmx?disco" />
+    <MetadataFile FileName="service1.disco" MetadataType="Disco" ID="451e28a7-7db9-4cf1-ae52-478349ecf079" SourceId="1" SourceUrl="http://validator.dmbasis.ru/phoneExt/service.asmx?disco" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="d874898b-7b4d-4c61-9028-8fddc2a553cb" SourceId="1" SourceUrl="http://validator.dmbasis.ru/phoneExt/service.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

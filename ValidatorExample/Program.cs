@@ -25,21 +25,21 @@ namespace ValidatorExample
             }
 
             Console.WriteLine("Передача задания на валидацию");
-            var jobId = client.ValidateBatch(batchList.ToArray(), false, "Имярек");
+            var jobId = client.ValidateBatch(batchList.ToArray(), false, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81") /*"Имярек"*/);
 
             Console.WriteLine("Проверка состояния задания (выполнено или нет)");
-            var status = client.GetJobStatus(jobId);
+            var status = client.GetJobStatus(jobId, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81"));
             while (status.Status != "DONE")
             {
                 
-                status = client.GetJobStatus(jobId);
+                status = client.GetJobStatus(jobId, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81"));
                 Console.WriteLine(String.Format("{0}: Статус задания '{1}'. Обработано телефонных номеров - {2}",
                                                     DateTime.Now, status.Status, status.Count));
                 Thread.Sleep(TimeSpan.FromMinutes(1));
             }
 
             Console.WriteLine("Получение результатов валидации");
-            var batchResult = client.GetValidationResult(jobId);
+            var batchResult = client.GetValidationResult(jobId, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81"));
 
             for (int i = 0; i < batchResult.Length; i++)
             {

@@ -15,12 +15,137 @@ namespace ValidatorExample.ValidationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValidationResult", Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValidationRequest", Namespace="http://validator.dmbasis.ru/External/Phone/")]
+    [System.SerializableAttribute()]
+    public partial class ValidationRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ValidatorExample.ValidationService.ExtensionDataObject ExtensionData1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public ValidatorExample.ValidationService.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string RecordId {
+            get {
+                return this.RecordIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordIdField, value) != true)) {
+                    this.RecordIdField = value;
+                    this.RaisePropertyChanged("RecordId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string PhoneCode {
+            get {
+                return this.PhoneCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneCodeField, value) != true)) {
+                    this.PhoneCodeField = value;
+                    this.RaisePropertyChanged("PhoneCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string PhoneNum {
+            get {
+                return this.PhoneNumField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumField, value) != true)) {
+                    this.PhoneNumField = value;
+                    this.RaisePropertyChanged("PhoneNum");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExtensionDataObject", Namespace="http://validator.dmbasis.ru/External/Phone/")]
+    [System.SerializableAttribute()]
+    public partial class ExtensionDataObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValidationResult", Namespace="http://validator.dmbasis.ru/External/Phone/")]
     [System.SerializableAttribute()]
     public partial class ValidationResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ValidatorExample.ValidationService.ExtensionDataObject ExtensionData1Field;
         
         private System.Guid IdField;
         
@@ -69,6 +194,19 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public ValidatorExample.ValidationService.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public System.Guid Id {
             get {
@@ -95,7 +233,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string RawPhoneCode {
             get {
                 return this.RawPhoneCodeField;
@@ -108,7 +246,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string RawPhoneNum {
             get {
                 return this.RawPhoneNumField;
@@ -121,7 +259,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string PhoneCode {
             get {
                 return this.PhoneCodeField;
@@ -134,7 +272,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string PhoneNum {
             get {
                 return this.PhoneNumField;
@@ -147,7 +285,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string CountryCode {
             get {
                 return this.CountryCodeField;
@@ -160,7 +298,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string PhoneType {
             get {
                 return this.PhoneTypeField;
@@ -173,7 +311,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public string Provider {
             get {
                 return this.ProviderField;
@@ -186,7 +324,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string Region {
             get {
                 return this.RegionField;
@@ -199,7 +337,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
         public string City {
             get {
                 return this.CityField;
@@ -212,7 +350,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
         public string TimeZone {
             get {
                 return this.TimeZoneField;
@@ -225,7 +363,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=13)]
         public int Status {
             get {
                 return this.StatusField;
@@ -250,89 +388,15 @@ namespace ValidatorExample.ValidationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValidationRequest", Namespace="http://validator.dmbasis.ru/phone/")]
-    [System.SerializableAttribute()]
-    public partial class ValidationRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhoneNumField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string RecordId {
-            get {
-                return this.RecordIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIdField, value) != true)) {
-                    this.RecordIdField = value;
-                    this.RaisePropertyChanged("RecordId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string PhoneCode {
-            get {
-                return this.PhoneCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneCodeField, value) != true)) {
-                    this.PhoneCodeField = value;
-                    this.RaisePropertyChanged("PhoneCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string PhoneNum {
-            get {
-                return this.PhoneNumField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneNumField, value) != true)) {
-                    this.PhoneNumField = value;
-                    this.RaisePropertyChanged("PhoneNum");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="JobStatusResult", Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="JobStatusResult", Namespace="http://validator.dmbasis.ru/External/Phone/")]
     [System.SerializableAttribute()]
     public partial class JobStatusResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ValidatorExample.ValidationService.ExtensionDataObject ExtensionData1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusField;
@@ -349,6 +413,19 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Name="ExtensionData", EmitDefaultValue=false)]
+        public ValidatorExample.ValidationService.ExtensionDataObject ExtensionData1 {
+            get {
+                return this.ExtensionData1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtensionData1Field, value) != true)) {
+                    this.ExtensionData1Field = value;
+                    this.RaisePropertyChanged("ExtensionData1");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
         public string Status {
             get {
@@ -362,7 +439,7 @@ namespace ValidatorExample.ValidationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public int Count {
             get {
                 return this.CountField;
@@ -386,27 +463,27 @@ namespace ValidatorExample.ValidationService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://validator.dmbasis.ru/phone/", ConfigurationName="ValidationService.ServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/", ConfigurationName="ValidationService.ServiceSoap")]
     public interface ServiceSoap {
         
-        // CODEGEN: Generating message contract since element name phoneCode from namespace http://validator.dmbasis.ru/phone/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/phone/Validate", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name request from namespace http://validator.dmbasis.ru/External/Phone/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/External/Phone/Validate", ReplyAction="*")]
         ValidatorExample.ValidationService.ValidateResponse Validate(ValidatorExample.ValidationService.ValidateRequest request);
         
-        // CODEGEN: Generating message contract since element name batch from namespace http://validator.dmbasis.ru/phone/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/phone/ValidateBatch", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name batch from namespace http://validator.dmbasis.ru/External/Phone/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/External/Phone/ValidateBatch", ReplyAction="*")]
         ValidatorExample.ValidationService.ValidateBatchResponse ValidateBatch(ValidatorExample.ValidationService.ValidateBatchRequest request);
         
-        // CODEGEN: Generating message contract since element name GetJobStatusResult from namespace http://validator.dmbasis.ru/phone/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/phone/GetJobStatus", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name GetJobStatusResult from namespace http://validator.dmbasis.ru/External/Phone/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/External/Phone/GetJobStatus", ReplyAction="*")]
         ValidatorExample.ValidationService.GetJobStatusResponse GetJobStatus(ValidatorExample.ValidationService.GetJobStatusRequest request);
         
-        // CODEGEN: Generating message contract since element name GetValidationResultResult from namespace http://validator.dmbasis.ru/phone/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/phone/GetValidationResult", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name GetValidationResultResult from namespace http://validator.dmbasis.ru/External/Phone/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/External/Phone/GetValidationResult", ReplyAction="*")]
         ValidatorExample.ValidationService.GetValidationResultResponse GetValidationResult(ValidatorExample.ValidationService.GetValidationResultRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/phone/StartJob", ReplyAction="*")]
-        int StartJob(System.Guid jobId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://validator.dmbasis.ru/External/Phone/StartJob", ReplyAction="*")]
+        int StartJob(System.Guid jobId, System.Guid userId);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -415,7 +492,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ValidateRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validate", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validate", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.ValidateRequestBody Body;
         
         public ValidateRequest() {
@@ -429,21 +506,17 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class ValidateRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string phoneCode;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string phoneNum;
+        public ValidatorExample.ValidationService.ValidationRequest request;
         
         public ValidateRequestBody() {
         }
         
-        public ValidateRequestBody(string phoneCode, string phoneNum) {
-            this.phoneCode = phoneCode;
-            this.phoneNum = phoneNum;
+        public ValidateRequestBody(ValidatorExample.ValidationService.ValidationRequest request) {
+            this.request = request;
         }
     }
     
@@ -453,7 +526,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ValidateResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidateResponse", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidateResponse", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.ValidateResponseBody Body;
         
         public ValidateResponse() {
@@ -467,16 +540,16 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class ValidateResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public ValidatorExample.ValidationService.ValidationResult[] ValidateResult;
+        public ValidatorExample.ValidationService.ValidationResult ValidateResult;
         
         public ValidateResponseBody() {
         }
         
-        public ValidateResponseBody(ValidatorExample.ValidationService.ValidationResult[] ValidateResult) {
+        public ValidateResponseBody(ValidatorExample.ValidationService.ValidationResult ValidateResult) {
             this.ValidateResult = ValidateResult;
         }
     }
@@ -487,7 +560,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ValidateBatchRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidateBatch", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidateBatch", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.ValidateBatchRequestBody Body;
         
         public ValidateBatchRequest() {
@@ -501,7 +574,7 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class ValidateBatchRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -510,16 +583,16 @@ namespace ValidatorExample.ValidationService {
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
         public bool withManualChecking;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string userName;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.Guid userId;
         
         public ValidateBatchRequestBody() {
         }
         
-        public ValidateBatchRequestBody(ValidatorExample.ValidationService.ValidationRequest[] batch, bool withManualChecking, string userName) {
+        public ValidateBatchRequestBody(ValidatorExample.ValidationService.ValidationRequest[] batch, bool withManualChecking, System.Guid userId) {
             this.batch = batch;
             this.withManualChecking = withManualChecking;
-            this.userName = userName;
+            this.userId = userId;
         }
     }
     
@@ -529,7 +602,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ValidateBatchResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidateBatchResponse", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidateBatchResponse", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.ValidateBatchResponseBody Body;
         
         public ValidateBatchResponse() {
@@ -543,7 +616,7 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class ValidateBatchResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
@@ -563,7 +636,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetJobStatusRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetJobStatus", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetJobStatus", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.GetJobStatusRequestBody Body;
         
         public GetJobStatusRequest() {
@@ -577,17 +650,21 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class GetJobStatusRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public System.Guid jobId;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.Guid userId;
+        
         public GetJobStatusRequestBody() {
         }
         
-        public GetJobStatusRequestBody(System.Guid jobId) {
+        public GetJobStatusRequestBody(System.Guid jobId, System.Guid userId) {
             this.jobId = jobId;
+            this.userId = userId;
         }
     }
     
@@ -597,7 +674,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetJobStatusResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetJobStatusResponse", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetJobStatusResponse", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.GetJobStatusResponseBody Body;
         
         public GetJobStatusResponse() {
@@ -611,7 +688,7 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class GetJobStatusResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -631,7 +708,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetValidationResultRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetValidationResult", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetValidationResult", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.GetValidationResultRequestBody Body;
         
         public GetValidationResultRequest() {
@@ -645,17 +722,21 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class GetValidationResultRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public System.Guid jobId;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.Guid userId;
+        
         public GetValidationResultRequestBody() {
         }
         
-        public GetValidationResultRequestBody(System.Guid jobId) {
+        public GetValidationResultRequestBody(System.Guid jobId, System.Guid userId) {
             this.jobId = jobId;
+            this.userId = userId;
         }
     }
     
@@ -665,7 +746,7 @@ namespace ValidatorExample.ValidationService {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetValidationResultResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetValidationResultResponse", Namespace="http://validator.dmbasis.ru/phone/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetValidationResultResponse", Namespace="http://validator.dmbasis.ru/External/Phone/", Order=0)]
         public ValidatorExample.ValidationService.GetValidationResultResponseBody Body;
         
         public GetValidationResultResponse() {
@@ -679,7 +760,7 @@ namespace ValidatorExample.ValidationService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/phone/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://validator.dmbasis.ru/External/Phone/")]
     public partial class GetValidationResultResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -725,11 +806,10 @@ namespace ValidatorExample.ValidationService {
             return base.Channel.Validate(request);
         }
         
-        public ValidatorExample.ValidationService.ValidationResult[] Validate(string phoneCode, string phoneNum) {
+        public ValidatorExample.ValidationService.ValidationResult Validate(ValidatorExample.ValidationService.ValidationRequest request) {
             ValidatorExample.ValidationService.ValidateRequest inValue = new ValidatorExample.ValidationService.ValidateRequest();
             inValue.Body = new ValidatorExample.ValidationService.ValidateRequestBody();
-            inValue.Body.phoneCode = phoneCode;
-            inValue.Body.phoneNum = phoneNum;
+            inValue.Body.request = request;
             ValidatorExample.ValidationService.ValidateResponse retVal = ((ValidatorExample.ValidationService.ServiceSoap)(this)).Validate(inValue);
             return retVal.Body.ValidateResult;
         }
@@ -739,12 +819,12 @@ namespace ValidatorExample.ValidationService {
             return base.Channel.ValidateBatch(request);
         }
         
-        public System.Guid ValidateBatch(ValidatorExample.ValidationService.ValidationRequest[] batch, bool withManualChecking, string userName) {
+        public System.Guid ValidateBatch(ValidatorExample.ValidationService.ValidationRequest[] batch, bool withManualChecking, System.Guid userId) {
             ValidatorExample.ValidationService.ValidateBatchRequest inValue = new ValidatorExample.ValidationService.ValidateBatchRequest();
             inValue.Body = new ValidatorExample.ValidationService.ValidateBatchRequestBody();
             inValue.Body.batch = batch;
             inValue.Body.withManualChecking = withManualChecking;
-            inValue.Body.userName = userName;
+            inValue.Body.userId = userId;
             ValidatorExample.ValidationService.ValidateBatchResponse retVal = ((ValidatorExample.ValidationService.ServiceSoap)(this)).ValidateBatch(inValue);
             return retVal.Body.ValidateBatchResult;
         }
@@ -754,10 +834,11 @@ namespace ValidatorExample.ValidationService {
             return base.Channel.GetJobStatus(request);
         }
         
-        public ValidatorExample.ValidationService.JobStatusResult GetJobStatus(System.Guid jobId) {
+        public ValidatorExample.ValidationService.JobStatusResult GetJobStatus(System.Guid jobId, System.Guid userId) {
             ValidatorExample.ValidationService.GetJobStatusRequest inValue = new ValidatorExample.ValidationService.GetJobStatusRequest();
             inValue.Body = new ValidatorExample.ValidationService.GetJobStatusRequestBody();
             inValue.Body.jobId = jobId;
+            inValue.Body.userId = userId;
             ValidatorExample.ValidationService.GetJobStatusResponse retVal = ((ValidatorExample.ValidationService.ServiceSoap)(this)).GetJobStatus(inValue);
             return retVal.Body.GetJobStatusResult;
         }
@@ -767,16 +848,17 @@ namespace ValidatorExample.ValidationService {
             return base.Channel.GetValidationResult(request);
         }
         
-        public ValidatorExample.ValidationService.ValidationResult[] GetValidationResult(System.Guid jobId) {
+        public ValidatorExample.ValidationService.ValidationResult[] GetValidationResult(System.Guid jobId, System.Guid userId) {
             ValidatorExample.ValidationService.GetValidationResultRequest inValue = new ValidatorExample.ValidationService.GetValidationResultRequest();
             inValue.Body = new ValidatorExample.ValidationService.GetValidationResultRequestBody();
             inValue.Body.jobId = jobId;
+            inValue.Body.userId = userId;
             ValidatorExample.ValidationService.GetValidationResultResponse retVal = ((ValidatorExample.ValidationService.ServiceSoap)(this)).GetValidationResult(inValue);
             return retVal.Body.GetValidationResultResult;
         }
         
-        public int StartJob(System.Guid jobId) {
-            return base.Channel.StartJob(jobId);
+        public int StartJob(System.Guid jobId, System.Guid userId) {
+            return base.Channel.StartJob(jobId, userId);
         }
     }
 }
