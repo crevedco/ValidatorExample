@@ -25,7 +25,7 @@ namespace ValidatorExample
             }
 
             Console.WriteLine("Передача задания на валидацию");
-            var jobId = client.ValidateBatch(batchList.ToArray(), false, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81") /*"Имярек"*/);
+            var jobId = client.ValidateBatch(batchList.ToArray(), false, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81"));
 
             Console.WriteLine("Проверка состояния задания (выполнено или нет)");
             var status = client.GetJobStatus(jobId, new Guid("5B2C1A24-60D8-41E5-B0B6-83A7BE51CB81"));
