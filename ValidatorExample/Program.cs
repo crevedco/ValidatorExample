@@ -9,6 +9,8 @@ namespace ValidatorExample
     {
         static void Main(string[] args)
         {
+            System.Net.ServicePointManager.SecurityProtocol = (SecurityProtocolType) 3072;
+            
             var client = new ServiceSoapClient();
             string[] phonesForValidate = { "+7 495 667 88 99", "9162132632", "8(903)165-34-56", "фываолдж" };
 
